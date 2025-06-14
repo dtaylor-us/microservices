@@ -1,2 +1,5 @@
+/Users/derektaylor/projects/cs-study/architecture/microservices/common-lib/src/main/java/us.dtaylor.common.dto/PaymentRequest.java
 /Users/derektaylor/projects/cs-study/architecture/microservices/common-lib/src/main/java/us.dtaylor.common.dto/ValidationResponse.java
 /Users/derektaylor/projects/cs-study/architecture/microservices/common-lib/src/main/java/us.dtaylor.common.dto/OrderItem.java
+/Users/derektaylor/projects/cs-study/architecture/microservices/common-lib/src/main/java/us.dtaylor.common.dto/ErrorResponse.java
+/Users/derektaylor/projects/cs-study/architecture/microservices/common-lib/src/main/java/us.dtaylor.common.dto/PaymentResponse.java

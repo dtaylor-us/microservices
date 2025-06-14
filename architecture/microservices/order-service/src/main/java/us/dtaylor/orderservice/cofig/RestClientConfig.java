@@ -9,7 +9,11 @@ import org.springframework.web.client.RestTemplate;
 public class RestClientConfig {
 
     @Bean
-    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+    public RestTemplate productRestTemplate(RestTemplateBuilder builder) {
         return builder.rootUri("http://product-service:8081").build();
+    }
+    @Bean
+    public RestTemplate paymentRestTemplate(RestTemplateBuilder builder) {
+        return builder.rootUri("http://payment-service:8083").build();
     }
 }

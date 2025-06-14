@@ -1,2 +1,5 @@
+us/dtaylor/common/dto/ErrorResponse.class
+us/dtaylor/common/dto/PaymentRequest.class
+us/dtaylor/common/dto/PaymentResponse.class
 us/dtaylor/common/dto/OrderItem.class
 us/dtaylor/common/dto/ValidationResponse.class

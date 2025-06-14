@@ -1,4 +1,4 @@
-package us.dtaylor.orderservice.dto;
+package us.dtaylor.common.dto;
 
 import java.time.Instant;
 

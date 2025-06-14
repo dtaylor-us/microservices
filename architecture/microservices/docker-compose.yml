@@ -16,7 +16,9 @@ services:
       - somenet
 
   product-service:
-    build: ./product-service
+    build:
+        context: .
+        dockerfile: product-service/Dockerfile
     container_name: product-service
     ports:
       - "8081:8081"
@@ -44,7 +46,9 @@ services:
       - somenet
 
   order-service:
-    build: ./order-service
+    build:
+        context: .
+        dockerfile: order-service/Dockerfile
     container_name: order-service
     ports:
       - "8082:8082"
@@ -52,6 +56,34 @@ services:
       - order-db
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://order-db:5432/orderdb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    networks:
+      - somenet
+
+  payment-db:
+    image: postgres:15
+    container_name: payment-db
+    environment:
+      POSTGRES_DB: paymentdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5434:5432"
+    networks:
+      - somenet
+
+  payment-service:
+    build:
+        context: .
+        dockerfile: payment-service/Dockerfile
+    container_name: payment-service
+    ports:
+      - "8083:8083"
+    depends_on:
+      - payment-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://payment-db:5432/paymentdb
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
     networks:

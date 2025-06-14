@@ -1,7 +1,9 @@
 package us.dtaylor.productservice.controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import us.dtaylor.common.dto.ErrorResponse;
 import us.dtaylor.common.dto.OrderItem;
 import us.dtaylor.common.dto.ValidationResponse;
 import us.dtaylor.productservice.model.Product;
