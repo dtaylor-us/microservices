@@ -3,6 +3,7 @@ package us.dtaylor.orderservice.controller;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import us.dtaylor.orderservice.dto.ErrorResponse;
 import us.dtaylor.orderservice.dto.OrderRequest;
 import us.dtaylor.orderservice.exception.ProductServiceException;
 import us.dtaylor.orderservice.model.Order;
@@ -28,8 +29,8 @@ public class OrderController {
 
     @ExceptionHandler(ProductServiceException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public String handleProductServiceException(ProductServiceException ex) {
-        return ex.getMessage();
+    public ErrorResponse handleProductServiceException(ProductServiceException ex) {
+        return new ErrorResponse(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR.value());
     }
 
     @GetMapping

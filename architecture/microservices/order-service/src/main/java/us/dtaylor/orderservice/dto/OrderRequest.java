@@ -1,16 +1,13 @@
 package us.dtaylor.orderservice.dto;
 
 import jakarta.validation.constraints.NotEmpty;
-import lombok.Data;
+import us.dtaylor.common.dto.OrderItem;
 
 import java.util.List;
 
-@Data
-public class OrderRequest {
-    @NotEmpty
-    public String customerName;
-
-    @NotEmpty
-    public List<Long> productIds;
-
+public record OrderRequest(
+        @NotEmpty String customerName,
+        List<OrderItem> items,
+        double totalPrice
+) {
 }
